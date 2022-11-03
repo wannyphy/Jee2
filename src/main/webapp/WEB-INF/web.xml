@@ -8,19 +8,24 @@ http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
 
 		<servlet-name>Test</servlet-name>
 		<servlet-class>servlet.Test</servlet-class>
-		
-		 <multipart-config>
-            <location>/Users/wannyould-amrouche/Documents/applijeeimpfichiertmp/</location> <!-- A adapter chez vous -->
-            <max-file-size>10485760</max-file-size> <!-- 10 Mo -->
-            <max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
-            <file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
-        </multipart-config>
-        
+	
+		<multipart-config>
+			<location>/Users/wannyould-amrouche/Documents/applijeeimpfichiertmp/
+			</location> <!-- A adapter chez vous -->
+			<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+			<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+			<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+		</multipart-config>
+
 	</servlet>
+<servlet>
 
-	<servlet-mapping>
-		<servlet-name>Test</servlet-name>
-		<url-pattern>/bonjour</url-pattern>
+		<servlet-name>DownloadServlet</servlet-name>
+		<servlet-class>servlet.DownloadServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/Download</url-pattern>
 	</servlet-mapping>
-
 </web-app>
