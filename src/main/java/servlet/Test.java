@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import Beans.Auteur;
@@ -62,10 +63,18 @@ public class Test extends HttpServlet {
 		request.setAttribute("variable", message);
 
 		
+		
+		HttpSession session = request.getSession();
+		request.setAttribute("titres", titres);
+
+		session.setAttribute("variable", message);
+		session.setAttribute("auteur", auteur);
+	
+		
 
 
 		request.setAttribute("time", todaysdate);
-		
+		session.setAttribute("time", todaysdate);
 		
 getServletContext().getRequestDispatcher("/WEB-INF/hola.jsp").forward(request, response);
 
@@ -77,26 +86,12 @@ getServletContext().getRequestDispatcher("/WEB-INF/hola.jsp").forward(request, r
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		request.setAttribute("titres", titres);
+
 
 		
-		auteur.setFirstName("Wanny");
-		auteur.setName("OA");
-		auteur.setIsActive(true);
-		request.setAttribute("auteur", auteur);
-
-		
-		StringBuilder sb = new StringBuilder();
-		message = sb.append(message).reverse().toString();
-		sb.reverse().append(message).toString();
-		request.setAttribute("variable", message);
-	
-
-		/*
-		 * ConnectionForm form = new ConnectionForm(); form.verif(request);
-		 * request.setAttribute("form", form);
-		 */
+		  ConnectionForm form = new ConnectionForm(); form.verif(request);
+		  request.setAttribute("form", form);
+		 
 		
 		
 		  // On récupère le champ description comme d'habitude
