@@ -1,7 +1,6 @@
 package form;
 
-
-
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -10,13 +9,17 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class ConnectionForm {
 	private String resultat;
+	private String login;
+	private String pass;
 
 	public void verif(HttpServletRequest request) {
-		String login = request.getParameter("login");
-		String pass = request.getParameter("pass");
+
+		login = request.getParameter("login");
+		pass = request.getParameter("pass");
 
 		if (pass.equals(login + "123")) {
-			resultat = "estás conectado "+login;
+			resultat = "estás conectado " + login;
+
 			if (login.equals("Yuriamna")) {
 				resultat = "estás conectado Wara";
 
@@ -29,13 +32,17 @@ public class ConnectionForm {
 
 	}
 
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 	public String getResultat() {
 		return resultat;
 
-	}
-
-	public void setResultat(String resultat) {
-		this.resultat = resultat;
 	}
 
 }

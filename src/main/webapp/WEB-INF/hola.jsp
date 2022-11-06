@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ 
 	<c:set target="${auteur}" property="firstName"
 		value="${auteur.firstName}" />
 	<p>
@@ -40,7 +40,7 @@
 			Hola 
         </c:otherwise>
 	</c:choose>
-
+	
 	<form method="post" action="bonjour">
 		<p>
 			<label for="login">login:</label> <input type="text" name="login"
@@ -70,7 +70,9 @@
 	</c:forTokens>
 
 
-
+	<p>
+	<c:out value="${user}"/>
+	</p>
 
 
 
