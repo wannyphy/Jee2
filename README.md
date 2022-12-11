@@ -1,2 +1,0 @@
-# Jee2
-training

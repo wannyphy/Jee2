@@ -3,7 +3,7 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
-   version="3">
+  >
 	<servlet>
 	
 		<servlet-name>Test2</servlet-name>
@@ -31,5 +31,16 @@ http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
 	<servlet-name>DownloadServlet</servlet-name>
 	<url-pattern>/Download</url-pattern>
 </servlet-mapping>
+
+	<servlet>
+	
+		<servlet-name>ServletBdd</servlet-name>
+		<servlet-class>servlet.ServletBdd</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ServletBdd</servlet-name>
+		<url-pattern>/bdd</url-pattern>
+	</servlet-mapping>
 
 </web-app>
