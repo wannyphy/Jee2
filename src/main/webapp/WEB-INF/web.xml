@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
-  >
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd">
 	<servlet>
-	
+
 		<servlet-name>Test2</servlet-name>
 		<servlet-class>servlet.Test2</servlet-class>
 	</servlet>
@@ -15,25 +14,25 @@ http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
 		<url-pattern>/bonjour</url-pattern>
 	</servlet-mapping>
 
-<servlet>
-	<servlet-name>DownloadServlet</servlet-name>
-	<servlet-class>servlet.DownloadServlet</servlet-class>
-	<multipart-config>
-		<location>/Users/wannyould-amrouche/Documents/applijeeimpfichiertmp/
-		</location> <!-- A adapter chez vous -->
-		<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
-		<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
-		<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
-	</multipart-config>
-</servlet>
+	<servlet>
+		<servlet-name>DownloadServlet</servlet-name>
+		<servlet-class>servlet.DownloadServlet</servlet-class>
+		<multipart-config>
+			<location>/Users/wannyould-amrouche/Documents/applijeeimpfichiertmp/
+			</location> <!-- A adapter chez vous -->
+			<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+			<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+			<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+		</multipart-config>
+	</servlet>
 
-<servlet-mapping>
-	<servlet-name>DownloadServlet</servlet-name>
-	<url-pattern>/Download</url-pattern>
-</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/Download</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
-	
+
 		<servlet-name>ServletBdd</servlet-name>
 		<servlet-class>servlet.ServletBdd</servlet-class>
 	</servlet>
@@ -42,5 +41,21 @@ http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
 		<servlet-name>ServletBdd</servlet-name>
 		<url-pattern>/bdd</url-pattern>
 	</servlet-mapping>
+
+
+	<servlet>
+
+		<servlet-name>ServletBddDataobjectaccess</servlet-name>
+		<servlet-class>servlet.ServletBddDataobjectaccess</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ServletBddDataobjectaccess</servlet-name>
+		<url-pattern>/bddDao</url-pattern>
+	</servlet-mapping>
+
+
+
+
 
 </web-app>
